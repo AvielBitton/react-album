@@ -5,27 +5,23 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import useStyles from "./styles";
+import logo from "../../../assets/logo.png";
 
-const Album = ({ image, title, id }) => {
+const Album = ({ title, id }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.root} sx={{ maxWidth: 345 }}>
+    <Card variant="outlined" className={classes.root} sx={{ maxWidth: 345 }}>
       <CardActionArea>
-        <CardMedia component="img" height="140" image={image} alt={title} />
+        <CardMedia component="img" className={classes.CardMedia}  image={logo} alt={title} />
+        <Typography align="center" variant="body2" color="white">
+          {id}
+        </Typography>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {id}
-          </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions>
     </Card>
   );
 };
