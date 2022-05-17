@@ -23,7 +23,6 @@ const App = () => {
     fetchPhotos();
   }, []);
 
-  console.log(albums);
   return (
     <div className="App">
       <Navbar />
